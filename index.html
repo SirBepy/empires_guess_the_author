@@ -4,8 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Empires Game</title>
-    <link rel="stylesheet" href="assets/styles.css">
+    <title>Empires</title>
+    <meta name="description" content="A party game where everyone secretly enters a word, then the group guesses who wrote each one.">
+    <meta name="theme-color" content="#667eea">
+
+    <!-- Favicon -->
+    <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="assets/icon.png">
+
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Empires">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Empires">
+    <meta property="og:description" content="A party game where everyone secretly enters a word, then the group guesses who wrote each one.">
+    <meta property="og:image" content="assets/icon.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Empires">
+    <meta name="twitter:description" content="A party game where everyone secretly enters a word, then the group guesses who wrote each one.">
+    <meta name="twitter:image" content="assets/icon.png">
+
+    <link rel="stylesheet" href="assets/style.css">
 </head>
 
 <body>
@@ -60,6 +85,11 @@
     </div>
 
     <script src="assets/script.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js'));
+        }
+    </script>
 </body>
 
 </html>
