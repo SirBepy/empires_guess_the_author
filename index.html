@@ -6,11 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Empires</title>
     <meta name="description" content="A party game where everyone secretly enters a word, then the group guesses who wrote each one.">
-    <meta name="theme-color" content="#667eea">
+    <meta name="theme-color" content="#9d7dfc">
 
     <!-- Favicon -->
-    <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="assets/icon.png">
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
+    <link rel="apple-touch-icon" href="assets/images/favicon.png">
 
     <!-- PWA -->
     <link rel="manifest" href="manifest.json">
@@ -22,25 +24,27 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="Empires">
     <meta property="og:description" content="A party game where everyone secretly enters a word, then the group guesses who wrote each one.">
-    <meta property="og:image" content="assets/icon.png">
+    <meta property="og:image" content="assets/images/favicon.png">
+    <meta property="og:url" content="https://sirbepy.github.io/empires_guess_the_author/">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Empires">
     <meta name="twitter:description" content="A party game where everyone secretly enters a word, then the group guesses who wrote each one.">
-    <meta name="twitter:image" content="assets/icon.png">
+    <meta name="twitter:image" content="assets/images/favicon.png">
 
-    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sirbepy/bepy-project-init@main/styleguide.css" />
+    <link rel="stylesheet" href="src/styles/style.css">
 </head>
 
 <body>
-    <div class="container">
+    <div class="container card">
         <!-- Input Screen -->
         <div id="inputScreen">
-            <h1><img src="assets/icon.svg" alt="" width="48" height="48" style="vertical-align:middle;margin-right:10px;border-radius:10px"> Empires</h1>
+            <h1><img src="assets/images/favicon.svg" alt="" width="48" height="48" style="vertical-align:middle;margin-right:10px;border-radius:10px"> Empires</h1>
 
             <div class="input-section">
-                <input type="text" id="wordInput" placeholder="Enter your word..." />
+                <input class="input" type="text" id="wordInput" placeholder="Enter your word..." />
                 <button class="button button-primary" onclick="addWord()">
                     Add Word
                 </button>
@@ -61,7 +65,7 @@
 
         <!-- Reveal Screen -->
         <div id="revealScreen" class="hidden">
-            <h1><img src="assets/icon.svg" alt="" width="48" height="48" style="vertical-align:middle;margin-right:10px;border-radius:10px"> Empires</h1>
+            <h1><img src="assets/images/favicon.svg" alt="" width="48" height="48" style="vertical-align:middle;margin-right:10px;border-radius:10px"> Empires</h1>
 
             <div class="reveal-section">
                 <div class="word-counter" id="wordCounter"></div>
@@ -84,12 +88,16 @@
         </div>
     </div>
 
-    <script src="assets/script.js"></script>
+    <script src="src/scripts/script.js"></script>
     <script>
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js'));
         }
     </script>
+    <!-- Settings widget - comment out to disable -->
+    <script src="https://cdn.jsdelivr.net/gh/sirbepy/bepy-project-init@main/widget/settings.js"></script>
+    <!-- Animated background. To disable: set window.BEPY_BACKGROUND = false before this tag. To use a custom SVG: set window.BEPY_BG_PATTERN = 'your-pattern.svg' before this tag. -->
+    <script src="https://cdn.jsdelivr.net/gh/sirbepy/bepy-project-init@main/widget/background.js"></script>
 </body>
 
 </html>

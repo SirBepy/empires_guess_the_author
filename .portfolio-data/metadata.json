@@ -1,0 +1,14 @@
+{
+  "title": "Empires",
+  "shortDescription": "A party game where everyone secretly enters a word, then the group guesses who wrote each one.",
+  "type": "Web",
+  "status": "finished",
+  "languages": ["HTML", "CSS", "JavaScript"],
+  "frameworks": [],
+  "tools": [],
+  "liveUrl": "https://sirbepy.github.io/empires_guess_the_author/",
+  "mainImage": "screenshot-1.png",
+  "images": ["screenshot-1.png", "screenshot-2.png"],
+  "year": 2026,
+  "impressiveness": 2
+}

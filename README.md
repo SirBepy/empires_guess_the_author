@@ -1,45 +1,31 @@
-# 🎭 Empires
+<!-- TODO: one day consider stylized SVG title headers instead of plain markdown headings -->
 
-A simple, no-install party game for groups. Each player secretly enters a word or phrase, then everyone takes turns guessing who wrote each one.
+<img src="assets/images/icon.svg" width="48" alt="project icon" />
 
-Live at: [GitHub Pages](../../)
+# Empires
 
-## How to play
+> A party game where everyone secretly enters a word, then the group guesses who wrote each one.
 
-1. Pass the device around — each player types their secret word and taps **Add Word**
-2. Once everyone has added their word, tap **Done - Start Revealing**
-3. The words are shuffled and shown one at a time
-4. Players debate and guess who wrote each word
-5. Tap **Reset Game** to start a new round
+![Deploy](https://github.com/SirBepy/empires_guess_the_author/actions/workflows/deploy.yml/badge.svg) ![Last Commit](https://img.shields.io/github/last-commit/SirBepy/empires_guess_the_author) ![HTML](https://img.shields.io/badge/HTML-E34F26?logo=html5&logoColor=white) ![CSS](https://img.shields.io/badge/CSS-1572B6?logo=css3&logoColor=white) ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)
 
-## Features
+**Live:** https://sirbepy.github.io/empires_guess_the_author/
 
-- Words are saved to `localStorage` so a page refresh won't wipe progress
-- Fully responsive — works on phones, tablets, and desktops
-- Zero dependencies, no build step, no accounts
-- **PWA** — installable on Android, iOS, and desktop; works fully offline
+---
 
-## Project structure
+## About
 
-```
-empires_guess_the_author/
-├── index.html              # Single-page app
-├── manifest.json           # PWA manifest
-├── sw.js                   # Service worker (offline caching)
-├── assets/
-│   ├── style.css           # Styles
-│   ├── script.js           # Game logic
-│   ├── icon.svg            # App icon (favicon, PWA, OG)
-│   └── build-info.js       # Build metadata (injected at deploy time)
-└── .github/
-    └── workflows/
-        └── deploy.yml      # GitHub Pages deployment
-```
+Empires is a lightweight party game designed to be passed around on a single device. Each player secretly types a word or phrase, and once everyone has submitted, the app shuffles and reveals them one at a time for the group to guess who wrote what.
 
-## Running locally
+No accounts, no installs, no dependencies. Just open the page and start playing. Words are saved to localStorage so a page refresh won't wipe progress.
 
-Just open `index.html` in a browser — no server required.
+---
 
-## Deployment
+## How to run
 
-Pushes to `main` automatically deploy to GitHub Pages via the included workflow. Build timestamp and project name are injected into `build-info.js` at deploy time and logged to the browser console.
+Open `index.html` in a browser.
+
+---
+
+## Project write-up
+
+See [PORTFOLIO.md](.portfolio-data/PORTFOLIO.md) for the full project write-up.

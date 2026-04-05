@@ -1,22 +1,22 @@
-const CACHE_NAME = 'empires-v1';
+const CACHE_NAME = "v1";
 const ASSETS = [
-  './',
-  './assets/style.css',
-  './assets/script.js',
-  './assets/build-info.js',
-  './assets/icon.svg',
-  './manifest.json',
+  "./",
+  "./index.html",
+  "./src/styles/style.css",
+  "./src/scripts/script.js",
+  "./src/scripts/build-info.js",
+  "./assets/images/favicon.svg",
+  "./assets/images/favicon.png",
+  "./manifest.json",
 ];
 
-self.addEventListener('install', (event) => {
-  event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => cache.addAll(ASSETS))
-  );
+self.addEventListener("install", (e) => {
+  e.waitUntil(caches.open(CACHE_NAME).then((cache) => cache.addAll(ASSETS)));
   self.skipWaiting();
 });
 
-self.addEventListener('activate', (event) => {
-  event.waitUntil(
+self.addEventListener("activate", (e) => {
+  e.waitUntil(
     caches.keys().then((keys) =>
       Promise.all(keys.filter((k) => k !== CACHE_NAME).map((k) => caches.delete(k)))
     )
@@ -24,8 +24,8 @@ self.addEventListener('activate', (event) => {
   self.clients.claim();
 });
 
-self.addEventListener('fetch', (event) => {
-  event.respondWith(
-    caches.match(event.request).then((cached) => cached ?? fetch(event.request))
+self.addEventListener("fetch", (e) => {
+  e.respondWith(
+    caches.match(e.request).then((cached) => cached || fetch(e.request))
   );
 });
